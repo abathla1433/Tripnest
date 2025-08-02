@@ -187,6 +187,9 @@ app.get("/map",(req,res)=>{
 // });
 
 
+app.get("/", (req, res) => {
+  res.redirect("/listings");
+});
 
 
 app.get("/getsignedcookies", (req, res) => {
@@ -198,4 +201,3 @@ app.get("/verify",(req,res)=>{
     console.log(req.cookies);
     res.send(req.signedCookies);
 })
-
