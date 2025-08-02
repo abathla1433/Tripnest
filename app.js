@@ -168,11 +168,7 @@ app.use((err, req, res, next) => {
     res.status(statusCode).render("error.ejs",{err});
 });
 
-app.get("/", (req, res) => {
-  res.send("It works");
-  console.log(req.cookies);
 
-});
 
 
 app.get("/map",(req,res)=>{
