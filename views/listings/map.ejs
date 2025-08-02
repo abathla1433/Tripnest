@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Map Listings</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    #map { height: 500px; width: 100%; }
+    .popup-content { font-size: 14px; }
+  </style>
+</head>
+<body>
+  <h2>🏡 Listings Map (Airbnb Style)</h2>
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    const map = L.map('map').setView([20, 0], 2);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Example "listings" data (simulate from database)
+    const listings = [
+      {
+        name: "Cozy Apartment - New York",
+        coords: [40.7128, -74.0060],
+        price: "$120/night"
+      },
+      {
+        name: "Modern Flat - London",
+        coords: [51.5074, -0.1278],
+        price: "$150/night"
+      },
+      {
+        name: "Japanese House - Tokyo",
+        coords: [35.6895, 139.6917],
+        price: "$95/night"
+      },
+      {
+        name: "Penthouse - Delhi",
+        coords: [28.6139, 77.2090],
+        price: "$80/night"
+      }
+    ];
+
+    listings.forEach(listing => {
+      L.marker(listing.coords)
+        .addTo(map)
+        .bindPopup(`
+          <div class="popup-content">
+            <b>${listing.name}</b><br/>
+            ${listing.price}
+          </div>
+        `);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<% layout("layouts/boilerplate.ejs") %>
+
+    <body>
+        <br><br>
+        <h1>Edit the details of Listing</h1>
+        <div class="row mt-3">
+            <div class="col-8 offset-2">
+                <form method="POST" action="/listings/<%=listingData._id%>?_method=PUT" class="needs-validation"
+                    novalidate enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <b> <label for="title" class="form-label">Title</label></b>
+                        <input type="text" name="title" value="<%=listingData.title%>" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <b><label for="description" class="form-label">Description</label></b>
+                        <textarea class="form-control" name="description"
+                            required><%=listingData.description%></textarea>
+                        <div class="invalid-feedback">
+                            add a short description
+                        </div>
+                    </div>
+                    <!-- <div class="mb-3">
+                        <b><label for="image" class="form-label">Image URL</label></b>
+                        <input class="form-control" type="text" name="image[url]" value="<%=listingData.image.url%>" required>
+                    </div> -->
+                    <div class="mb-3">
+                        Orignal listing image <br>
+                        <img src="<%= originalImageUrl %>" class="img-thumbnail mb-2"
+                                width="200">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Upload New image</label>
+                        <input type="file" name="image[url]" class="form-control" value="<%=listingData.image.url%>">
+                    </div>
+                    <!-- <div class="mb-3">
+                        <label for="image" class="form-label">Upload new listing image (optional)</label>
+                        <% if (listingData.image && listingData.image.url) { %>
+                            <img src="<%= listingData.image.url %>" alt="Current image" class="img-thumbnail mb-2"
+                                width="200">
+                            <% } %>
+                                <input type="file" name="image" accept="image/*" class="form-control">
+                    </div> -->
+
+                    <div class="row">
+                        <div class="mb-3 col-md-4">
+                            <b> <label for="price" class="form-label">Price</label></b>
+                            <input class="form-control" name="price" value="<%=listingData.price%>" required>
+
+                            <div class="invalid-feedback">
+                                enter a valid price
+                            </div>
+                        </div>
+                        <div class="mb-3 col-md-8">
+                            <b><label for="location" class="form-label">Location</label></b>
+                            <input class="form-control" type="text" name="location" value="<%=listingData.location%>"
+                                required>
+                            <div class="invalid-feedback">
+                                location should be valid
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <b><label for="country" class="form-label">Country</label></b>
+                        <input class="form-control" type="text" name="country" value="<%=listingData.country%>"
+                            required>
+                        <div class="invalid-feedback">
+                            Please enter a country name
+                        </div>
+                    </div>
+                    <button class="btn btn-dark edit-btn mt-3">Add Changes</button>
+                    <br><br>
+                </form>
+            </div>
+        </div>
+        <script src="/js/script.js"></script>
+    </body>

@@ -1,0 +1,154 @@
+body {
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    font-optical-sizing: auto !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container{
+    flex: 1;
+}
+
+.navbar {
+    height: 5rem;
+    background-color: rgb(253, 253, 253);
+}
+
+.fa-compass {
+    color: #fe424d;
+    font-size: 2rem;
+}
+
+.nav-link {
+    color: #222222 !important;
+}
+
+.f-info-socials a {
+    color: black;
+}
+
+.f-info-links a {
+    text-decoration: none;
+    color: #222222;
+    transition: text-decoration 4.3s ease;
+}
+
+.f-info-links a:hover {
+    text-decoration: underline;
+}
+
+.f-info-links,
+.f-info-socials,
+.f-info-brand {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.f-info-socials i {
+    margin-right: 1rem;
+    font-size: 1.2rem;
+}
+
+.f-info-socials a i {
+  font-size: 1.2rem; /* default size */
+  transition: transform 0.3s ease; /* smooth animation */
+}
+
+.f-info-socials a:hover i {
+  transform: scale(1.3); /* increases size to 130% */
+}
+
+
+.f-info {
+    display: flex;
+    height: 8rem;
+    text-align: center;
+    background-color: #ebebeb;
+    align-items: space-evenly;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* cards */
+
+.listing-card {
+    border: none !important;
+    margin: 2rem;
+}
+
+.card-img-top {
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+.card-body {
+    padding: 0 !important;
+}
+
+.card-text p {
+    font-weight: 400 !important;
+}
+
+.listing-link{
+    text-decoration: none;
+}
+
+/* card effect */
+
+.listing-link{
+    text-decoration: none;
+}   
+
+.card-img-overlay{
+    opacity: 0;
+}
+.card-img-overlay:hover{
+  opacity: 0.2;
+  background-color: #ebebeb;
+}
+
+.listing-link .card{
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.listing-link:hover .card {
+  transform: scale(1.05);
+  /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); */
+  box-shadow: 16px 19px 31px 0px rgba(0,0,0,0.49);
+-webkit-box-shadow: 16px 19px 31px 0px rgba(0,0,0,0.49);
+-moz-box-shadow: 16px 19px 31px 0px rgba(0,0,0,0.49);
+}
+
+.listing-link .card .card-body .card-text{
+    padding: 1rem;
+}
+
+input.form-control:hover,
+textarea.form-control:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0 8px rgba(40, 35, 35, 0.6);
+    transition: transform 0.2s ease, box-shadow 0.2s ease-in;
+}
+
+.add-btn,.edit-btn{
+    background-color: #fe424d !important;
+    border: none !important;
+}
+
+/* show page */
+
+.show-img{
+    /* width:20rem !important; */
+    height: 30vh;
+}
+
+.show-card{
+    padding-left: 0;
+    padding-right: 0;
+}

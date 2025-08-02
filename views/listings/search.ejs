@@ -1,0 +1,32 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+<body>
+    <div class="container mt-4">
+        <h3 class="mb-4">
+            Search results for "<%= title %>"
+        </h3>
+
+        <% if (listings.length > 0) { %>
+            <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 g-4">
+                <% listings.forEach(listing => { %>
+                    <div class="col">
+                        <a href="/listings/<%= listing._id %>" style="text-decoration: none; color: inherit;">
+                            <div class="card h-100 shadow">
+                                <img src="<%= listing.image.url %>" class="card-img-top" alt="Listing Image" style="height: 18rem; object-fit: cover;">
+                                <div class="card-body">
+                                    <h5 class="card-title"><%= listing.title %></h5>
+                                    <p class="card-text">&#8377;<%= listing.price.toLocaleString("en-IN") %> / night</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                <% }); %>
+            </div>
+        <% } else { %>
+            <div class="text-center mt-5">
+                <h4>No listings found for "<%= title %>"</h4>
+                <a href="/listings" class="btn btn-outline-dark mt-3">Go Back</a>
+            </div>
+        <% } %>
+    </div>
+</body>

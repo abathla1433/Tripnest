@@ -1,0 +1,27 @@
+<% if (successMsg && successMsg.length > 0) { %>
+    <div class="alert alert-success alert-dismissible fade show col-6 offset-3" role="alert">
+        <%= successMsg %>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<% } %>
+
+<% if (revSuccessMsg && revSuccessMsg.length > 0) { %>
+    <div class="alert alert-info alert-dismissible fade show col-6 offset-3" role="alert">
+        <%= revSuccessMsg %>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<% } %>
+
+<% if (revDeleteMsg && revDeleteMsg.length > 0) { %>
+    <div class="alert alert-dark alert-dismissible fade show col-6 offset-3" role="alert">
+        <%= revDeleteMsg %>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<% } %>
+
+<% if (error && error.length > 0) { %>
+    <div class="alert alert-danger alert-dismissible fade show col-6 offset-3" role="alert">
+        <%= error %>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<% } %>
